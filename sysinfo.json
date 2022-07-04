@@ -1,0 +1,62 @@
+{
+  "node": "v16.13.1",
+  "system": {
+    "manufacturer": "HP",
+    "model": "HP ZBook Studio G3"
+  },
+  "cpu": {
+    "manufacturer": "Intel®",
+    "brand": "Core™ i7-6700HQ",
+    "speed": 2.6
+  },
+  "memory": "8 GB",
+  "osInfo": {
+    "platform": "Windows",
+    "distro": "Microsoft Windows 10 Home",
+    "release": "10.0.19044"
+  },
+  "vscodeInfo": {
+    "version": "1.68.1",
+    "extensions": [
+      "abusaidm.html-snippets",
+      "akamud.vscode-theme-onedark",
+      "akamud.vscode-theme-onelight",
+      "CoenraadS.bracket-pair-colorizer",
+      "dbaeumer.vscode-eslint",
+      "dracula-theme.theme-dracula",
+      "dsznajder.es7-react-js-snippets",
+      "ecmel.vscode-html-css",
+      "eddyw.azure-shades",
+      "EliverLara.andromeda",
+      "Equinusocio.vsc-community-material-theme",
+      "Equinusocio.vsc-material-theme",
+      "equinusocio.vsc-material-theme-icons",
+      "fisheva.eva-theme",
+      "formulahendry.auto-close-tag",
+      "formulahendry.auto-rename-tag",
+      "GitHub.github-vscode-theme",
+      "GitHub.vscode-pull-request-github",
+      "hdg.live-html-previewer",
+      "jprestidge.theme-material-theme",
+      "liviuschera.noctis",
+      "ms-azuretools.vscode-docker",
+      "ms-python.python",
+      "ms-python.vscode-pylance",
+      "ms-toolsai.jupyter",
+      "ms-toolsai.jupyter-keymap",
+      "ms-toolsai.jupyter-renderers",
+      "ms-vscode.cpptools-themes",
+      "ms-vsliveshare.vsliveshare",
+      "ritwickdey.LiveServer",
+      "rokoroku.vscode-theme-darcula",
+      "sdras.night-owl",
+      "SolarLiner.linux-themes",
+      "stkb.rewrap",
+      "streetsidesoftware.code-spell-checker",
+      "teabyii.ayu",
+      "wesbos.theme-cobalt2",
+      "xabikos.JavaScriptSnippets"
+    ],
+    "userSettings": {}
+  }
+}

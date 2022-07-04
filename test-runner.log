@@ -1,0 +1,2094 @@
+2022-07-04 06:20:48 info: ---------------------------------------
+2022-07-04 06:20:48 info: >>> Running Unit Test `ex1-johnWho` <<<
+2022-07-04 06:20:48 info: ---------------------------------------
+2022-07-04 06:20:55 error: *** Unit Test Error Report ***
+
+Command failed: npx jest ex1-johnWho.test.js --colors
+Browserslist: caniuse-lite is outdated. Please run:
+  npx browserslist@latest --update-db
+  Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
+ FAIL  3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js
+  getAnonName
+    √ should exist and be executable (2 ms)
+    × should have all TODO comments removed (3 ms)
+    √ `getAnonName` should not contain unneeded console.log calls (2 ms)
+    × should call `new Promise()` (1 ms)
+    × should take a single argument (3 ms)
+    × `resolve()` should be called with a one argument (1 ms)
+    × `reject()` should be called with a one argument (1 ms)
+    × should resolve when called with a string argument (1 ms)
+    × should reject with an Error object when called without an argument (1 ms)
+
+  ● getAnonName › should have all TODO comments removed
+
+    expect(received).toBeFalsy()
+
+    Received: true
+
+      103 | function testTodosRemoved(getSource) {
+      104 |   test('should have all TODO comments removed', () => {
+    > 105 |     expect(/\bTODO\b/.test(getSource())).toBeFalsy();
+          |                                          ^
+      106 |   });
+      107 | }
+      108 |
+
+      at Object.<anonymous> (test-runner/unit-test-helpers.js:105:42)
+
+  ● getAnonName › should call `new Promise()`
+
+    expect(received).toBeDefined()
+
+    Received: undefined
+
+      54 |
+      55 |   test('should call `new Promise()`', () => {
+    > 56 |     expect(state.newPromise).toBeDefined();
+         |                              ^
+      57 |   });
+      58 |
+      59 |   test('should take a single argument', () => {
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:56:30)
+
+  ● getAnonName › should take a single argument
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 2
+
+      58 |
+      59 |   test('should take a single argument', () => {
+    > 60 |     expect(state.paramCount).toBe(1);
+         |                              ^
+      61 |   });
+      62 |
+      63 |   test('`resolve()` should be called with a one argument', () => {
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:60:30)
+
+  ● getAnonName › `resolve()` should be called with a one argument
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: undefined
+
+      62 |
+      63 |   test('`resolve()` should be called with a one argument', () => {
+    > 64 |     expect(state.resolve).toBe(1);
+         |                           ^
+      65 |   });
+      66 |
+      67 |   test('`reject()` should be called with a one argument', () => {
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:64:27)
+
+  ● getAnonName › `reject()` should be called with a one argument
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: undefined
+
+      66 |
+      67 |   test('`reject()` should be called with a one argument', () => {
+    > 68 |     expect(state.reject).toBe(1);
+         |                          ^
+      69 |   });
+      70 |
+      71 |   test('should resolve when called with a string argument', async () => {
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:68:26)
+
+  ● getAnonName › should resolve when called with a string argument
+
+    TypeError: callback is not a function
+
+      19 |     const fullName = `${firstName} Doe`;
+      20 |
+    > 21 |     callback(fullName);
+         |     ^
+      22 |   }, 1000);
+      23 | };
+      24 |
+
+      at cb (3-UsingAPIs/Week1/homework/ex1-johnWho.js:21:5)
+      at 3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:76:35
+      at getAnonName (3-UsingAPIs/Week1/homework/ex1-johnWho.js:13:3)
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:77:21)
+
+  ● getAnonName › should resolve when called with a string argument
+
+    expect.assertions(3)
+
+    Expected three assertions to be called but received one assertion call.
+
+      70 |
+      71 |   test('should resolve when called with a string argument', async () => {
+    > 72 |     expect.assertions(3);
+         |            ^
+      73 |     expect(exported).toBeDefined();
+      74 |     const timeoutSpy = jest
+      75 |       .spyOn(global, 'setTimeout')
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:72:12)
+
+  ● getAnonName › should reject with an Error object when called without an argument
+
+    TypeError: callback is not a function
+
+      13 |   setTimeout(() => {
+      14 |     if (!firstName) {
+    > 15 |       callback(new Error("You didn't pass in a first name!"));
+         |       ^
+      16 |       return;
+      17 |     }
+      18 |
+
+      at cb (3-UsingAPIs/Week1/homework/ex1-johnWho.js:15:7)
+      at 3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:88:35
+      at getAnonName (3-UsingAPIs/Week1/homework/ex1-johnWho.js:13:3)
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:89:21)
+
+  ● getAnonName › should reject with an Error object when called without an argument
+
+    expect.assertions(3)
+
+    Expected three assertions to be called but received one assertion call.
+
+      82 |
+      83 |   test('should reject with an Error object when called without an argument', async () => {
+    > 84 |     expect.assertions(3);
+         |            ^
+      85 |     expect(exported).toBeDefined();
+      86 |     const timeoutSpy = jest
+      87 |       .spyOn(global, 'setTimeout')
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:84:12)
+
+Test Suites: 1 failed, 1 total
+Tests:       7 failed, 2 passed, 9 total
+Snapshots:   0 total
+Time:        1.588 s
+Ran all test suites matching /ex1-johnWho.test.js/i.
+2022-07-04 06:31:56 info: Disclaimer turned off
+2022-07-04 06:32:05 info: ---------------------------------------
+2022-07-04 06:32:05 info: >>> Running Unit Test `ex1-johnWho` <<<
+2022-07-04 06:32:05 info: ---------------------------------------
+2022-07-04 06:32:10 error: *** Unit Test Error Report ***
+
+Command failed: npx jest ex1-johnWho.test.js --colors
+Browserslist: caniuse-lite is outdated. Please run:
+  npx browserslist@latest --update-db
+  Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
+node:internal/process/promises:246
+          triggerUncaughtException(err, true /* fromPromise */);
+          ^
+
+[UnhandledPromiseRejection: This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). The promise rejected with the reason "You didn't pass in a first name!".] {
+  code: 'ERR_UNHANDLED_REJECTION'
+}
+2022-07-04 06:32:14 error: *** ESLint Report ***
+
+ex1-johnWho.js
+  12:33  error  'callback' is defined but never used  no-unused-vars
+
+✖ 1 problem (1 error, 0 warnings)
+
+
+2022-07-04 06:32:37 info: ---------------------------------------
+2022-07-04 06:32:37 info: >>> Running Unit Test `ex1-johnWho` <<<
+2022-07-04 06:32:37 info: ---------------------------------------
+2022-07-04 06:32:43 error: *** Unit Test Error Report ***
+
+Command failed: npx jest ex1-johnWho.test.js --colors
+Browserslist: caniuse-lite is outdated. Please run:
+  npx browserslist@latest --update-db
+  Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
+node:internal/process/promises:246
+          triggerUncaughtException(err, true /* fromPromise */);
+          ^
+
+[UnhandledPromiseRejection: This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). The promise rejected with the reason "You didn't pass in a first name!".] {
+  code: 'ERR_UNHANDLED_REJECTION'
+}
+2022-07-04 06:37:11 info: ---------------------------------------
+2022-07-04 06:37:11 info: >>> Running Unit Test `ex1-johnWho` <<<
+2022-07-04 06:37:11 info: ---------------------------------------
+2022-07-04 06:37:16 error: *** Unit Test Error Report ***
+
+Command failed: npx jest ex1-johnWho.test.js --colors
+Browserslist: caniuse-lite is outdated. Please run:
+  npx browserslist@latest --update-db
+  Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
+ FAIL  3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js
+  getAnonName
+    √ should exist and be executable (3 ms)
+    √ should have all TODO comments removed (1 ms)
+    × `getAnonName` should not contain unneeded console.log calls (6 ms)
+    √ should call `new Promise()` (1 ms)
+    √ should take a single argument (1 ms)
+    √ `resolve()` should be called with a one argument (1 ms)
+    √ `reject()` should be called with a one argument
+    × should resolve when called with a string argument (2 ms)
+    × should reject with an Error object when called without an argument (2 ms)
+
+  ● getAnonName › `getAnonName` should not contain unneeded console.log calls
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: false
+    Received: true
+
+      137 |       });
+      138 |
+    > 139 |     expect(callsConsoleLog).toBe(false);
+          |                             ^
+      140 |   });
+      141 | }
+      142 |
+
+      at Object.<anonymous> (test-runner/unit-test-helpers.js:139:29)
+
+  ● getAnonName › should resolve when called with a string argument
+
+    expect(received).toBeInstanceOf(expected)
+
+    Expected constructor: Promise
+
+    Received value has no prototype
+    Received value: undefined
+
+      77 |     const promise = getAnonName('John');
+      78 |     timeoutSpy.mockRestore();
+    > 79 |     expect(promise).toBeInstanceOf(Promise);
+         |                     ^
+      80 |     return expect(promise).resolves.toEqual('John Doe');
+      81 |   });
+      82 |
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:79:21)
+
+  ● getAnonName › should resolve when called with a string argument
+
+    expect.assertions(3)
+
+    Expected three assertions to be called but received two assertion calls.
+
+      70 |
+      71 |   test('should resolve when called with a string argument', async () => {
+    > 72 |     expect.assertions(3);
+         |            ^
+      73 |     expect(exported).toBeDefined();
+      74 |     const timeoutSpy = jest
+      75 |       .spyOn(global, 'setTimeout')
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:72:12)
+
+  ● getAnonName › should reject with an Error object when called without an argument
+
+    expect(received).toBeInstanceOf(expected)
+
+    Expected constructor: Promise
+
+    Received value has no prototype
+    Received value: undefined
+
+      89 |     const promise = getAnonName();
+      90 |     timeoutSpy.mockRestore();
+    > 91 |     expect(promise).toBeInstanceOf(Promise);
+         |                     ^
+      92 |     return expect(promise).rejects.toBeInstanceOf(Error);
+      93 |   });
+      94 | });
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:91:21)
+
+  ● getAnonName › should reject with an Error object when called without an argument
+
+    expect.assertions(3)
+
+    Expected three assertions to be called but received two assertion calls.
+
+      82 |
+      83 |   test('should reject with an Error object when called without an argument', async () => {
+    > 84 |     expect.assertions(3);
+         |            ^
+      85 |     expect(exported).toBeDefined();
+      86 |     const timeoutSpy = jest
+      87 |       .spyOn(global, 'setTimeout')
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:84:12)
+
+Test Suites: 1 failed, 1 total
+Tests:       3 failed, 6 passed, 9 total
+Snapshots:   0 total
+Time:        0.99 s, estimated 2 s
+Ran all test suites matching /ex1-johnWho.test.js/i.
+2022-07-04 06:38:50 info: ---------------------------------------
+2022-07-04 06:38:50 info: >>> Running Unit Test `ex1-johnWho` <<<
+2022-07-04 06:38:50 info: ---------------------------------------
+2022-07-04 06:38:55 error: *** Unit Test Error Report ***
+
+Command failed: npx jest ex1-johnWho.test.js --colors
+Browserslist: caniuse-lite is outdated. Please run:
+  npx browserslist@latest --update-db
+  Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
+ FAIL  3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js
+  getAnonName
+    √ should exist and be executable (2 ms)
+    √ should have all TODO comments removed
+    √ `getAnonName` should not contain unneeded console.log calls (1 ms)
+    √ should call `new Promise()`
+    √ should take a single argument
+    √ `resolve()` should be called with a one argument (1 ms)
+    √ `reject()` should be called with a one argument (1 ms)
+    × should resolve when called with a string argument (4 ms)
+    × should reject with an Error object when called without an argument (2 ms)
+
+  ● getAnonName › should resolve when called with a string argument
+
+    expect(received).toBeInstanceOf(expected)
+
+    Expected constructor: Promise
+
+    Received value has no prototype
+    Received value: undefined
+
+      77 |     const promise = getAnonName('John');
+      78 |     timeoutSpy.mockRestore();
+    > 79 |     expect(promise).toBeInstanceOf(Promise);
+         |                     ^
+      80 |     return expect(promise).resolves.toEqual('John Doe');
+      81 |   });
+      82 |
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:79:21)
+
+  ● getAnonName › should resolve when called with a string argument
+
+    expect.assertions(3)
+
+    Expected three assertions to be called but received two assertion calls.
+
+      70 |
+      71 |   test('should resolve when called with a string argument', async () => {
+    > 72 |     expect.assertions(3);
+         |            ^
+      73 |     expect(exported).toBeDefined();
+      74 |     const timeoutSpy = jest
+      75 |       .spyOn(global, 'setTimeout')
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:72:12)
+
+  ● getAnonName › should reject with an Error object when called without an argument
+
+    expect(received).toBeInstanceOf(expected)
+
+    Expected constructor: Promise
+
+    Received value has no prototype
+    Received value: undefined
+
+      89 |     const promise = getAnonName();
+      90 |     timeoutSpy.mockRestore();
+    > 91 |     expect(promise).toBeInstanceOf(Promise);
+         |                     ^
+      92 |     return expect(promise).rejects.toBeInstanceOf(Error);
+      93 |   });
+      94 | });
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:91:21)
+
+  ● getAnonName › should reject with an Error object when called without an argument
+
+    expect.assertions(3)
+
+    Expected three assertions to be called but received two assertion calls.
+
+      82 |
+      83 |   test('should reject with an Error object when called without an argument', async () => {
+    > 84 |     expect.assertions(3);
+         |            ^
+      85 |     expect(exported).toBeDefined();
+      86 |     const timeoutSpy = jest
+      87 |       .spyOn(global, 'setTimeout')
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:84:12)
+
+Test Suites: 1 failed, 1 total
+Tests:       2 failed, 7 passed, 9 total
+Snapshots:   0 total
+Time:        1.04 s
+Ran all test suites matching /ex1-johnWho.test.js/i.
+2022-07-04 06:39:49 info: ---------------------------------------
+2022-07-04 06:39:49 info: >>> Running Unit Test `ex1-johnWho` <<<
+2022-07-04 06:39:49 info: ---------------------------------------
+2022-07-04 06:39:54 error: *** Unit Test Error Report ***
+
+Command failed: npx jest ex1-johnWho.test.js --colors
+Browserslist: caniuse-lite is outdated. Please run:
+  npx browserslist@latest --update-db
+  Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
+ FAIL  3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js
+  getAnonName
+    √ should exist and be executable (3 ms)
+    √ should have all TODO comments removed
+    √ `getAnonName` should not contain unneeded console.log calls (1 ms)
+    √ should call `new Promise()` (1 ms)
+    √ should take a single argument
+    √ `resolve()` should be called with a one argument (1 ms)
+    √ `reject()` should be called with a one argument (1 ms)
+    × should resolve when called with a string argument (3 ms)
+    × should reject with an Error object when called without an argument (1 ms)
+
+  ● getAnonName › should resolve when called with a string argument
+
+    expect(received).toBeInstanceOf(expected)
+
+    Expected constructor: Promise
+
+    Received value has no prototype
+    Received value: undefined
+
+      77 |     const promise = getAnonName('John');
+      78 |     timeoutSpy.mockRestore();
+    > 79 |     expect(promise).toBeInstanceOf(Promise);
+         |                     ^
+      80 |     return expect(promise).resolves.toEqual('John Doe');
+      81 |   });
+      82 |
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:79:21)
+
+  ● getAnonName › should resolve when called with a string argument
+
+    expect.assertions(3)
+
+    Expected three assertions to be called but received two assertion calls.
+
+      70 |
+      71 |   test('should resolve when called with a string argument', async () => {
+    > 72 |     expect.assertions(3);
+         |            ^
+      73 |     expect(exported).toBeDefined();
+      74 |     const timeoutSpy = jest
+      75 |       .spyOn(global, 'setTimeout')
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:72:12)
+
+  ● getAnonName › should reject with an Error object when called without an argument
+
+    expect(received).toBeInstanceOf(expected)
+
+    Expected constructor: Promise
+
+    Received value has no prototype
+    Received value: undefined
+
+      89 |     const promise = getAnonName();
+      90 |     timeoutSpy.mockRestore();
+    > 91 |     expect(promise).toBeInstanceOf(Promise);
+         |                     ^
+      92 |     return expect(promise).rejects.toBeInstanceOf(Error);
+      93 |   });
+      94 | });
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:91:21)
+
+  ● getAnonName › should reject with an Error object when called without an argument
+
+    expect.assertions(3)
+
+    Expected three assertions to be called but received two assertion calls.
+
+      82 |
+      83 |   test('should reject with an Error object when called without an argument', async () => {
+    > 84 |     expect.assertions(3);
+         |            ^
+      85 |     expect(exported).toBeDefined();
+      86 |     const timeoutSpy = jest
+      87 |       .spyOn(global, 'setTimeout')
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:84:12)
+
+Test Suites: 1 failed, 1 total
+Tests:       2 failed, 7 passed, 9 total
+Snapshots:   0 total
+Time:        1.173 s
+Ran all test suites matching /ex1-johnWho.test.js/i.
+2022-07-04 06:41:21 info: ---------------------------------------
+2022-07-04 06:41:21 info: >>> Running Unit Test `ex1-johnWho` <<<
+2022-07-04 06:41:21 info: ---------------------------------------
+2022-07-04 06:41:26 error: *** Unit Test Error Report ***
+
+Command failed: npx jest ex1-johnWho.test.js --colors
+Browserslist: caniuse-lite is outdated. Please run:
+  npx browserslist@latest --update-db
+  Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
+ FAIL  3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js
+  getAnonName
+    √ should exist and be executable (3 ms)
+    √ should have all TODO comments removed (1 ms)
+    √ `getAnonName` should not contain unneeded console.log calls (1 ms)
+    √ should call `new Promise()`
+    √ should take a single argument (1 ms)
+    √ `resolve()` should be called with a one argument (1 ms)
+    √ `reject()` should be called with a one argument (1 ms)
+    × should resolve when called with a string argument (4 ms)
+    × should reject with an Error object when called without an argument (1 ms)
+
+  ● getAnonName › should resolve when called with a string argument
+
+    expect(received).toBeInstanceOf(expected)
+
+    Expected constructor: Promise
+
+    Received value has no prototype
+    Received value: undefined
+
+      77 |     const promise = getAnonName('John');
+      78 |     timeoutSpy.mockRestore();
+    > 79 |     expect(promise).toBeInstanceOf(Promise);
+         |                     ^
+      80 |     return expect(promise).resolves.toEqual('John Doe');
+      81 |   });
+      82 |
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:79:21)
+
+  ● getAnonName › should resolve when called with a string argument
+
+    expect.assertions(3)
+
+    Expected three assertions to be called but received two assertion calls.
+
+      70 |
+      71 |   test('should resolve when called with a string argument', async () => {
+    > 72 |     expect.assertions(3);
+         |            ^
+      73 |     expect(exported).toBeDefined();
+      74 |     const timeoutSpy = jest
+      75 |       .spyOn(global, 'setTimeout')
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:72:12)
+
+  ● getAnonName › should reject with an Error object when called without an argument
+
+    expect(received).toBeInstanceOf(expected)
+
+    Expected constructor: Promise
+
+    Received value has no prototype
+    Received value: undefined
+
+      89 |     const promise = getAnonName();
+      90 |     timeoutSpy.mockRestore();
+    > 91 |     expect(promise).toBeInstanceOf(Promise);
+         |                     ^
+      92 |     return expect(promise).rejects.toBeInstanceOf(Error);
+      93 |   });
+      94 | });
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:91:21)
+
+  ● getAnonName › should reject with an Error object when called without an argument
+
+    expect.assertions(3)
+
+    Expected three assertions to be called but received two assertion calls.
+
+      82 |
+      83 |   test('should reject with an Error object when called without an argument', async () => {
+    > 84 |     expect.assertions(3);
+         |            ^
+      85 |     expect(exported).toBeDefined();
+      86 |     const timeoutSpy = jest
+      87 |       .spyOn(global, 'setTimeout')
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:84:12)
+
+Test Suites: 1 failed, 1 total
+Tests:       2 failed, 7 passed, 9 total
+Snapshots:   0 total
+Time:        1.142 s, estimated 2 s
+Ran all test suites matching /ex1-johnWho.test.js/i.
+2022-07-04 06:41:30 error: *** ESLint Report ***
+
+ex1-johnWho.js
+  15:22  error  Expected '===' and instead saw '=='  eqeqeq
+  17:27  error  Expected '===' and instead saw '=='  eqeqeq
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+2022-07-04 06:42:08 info: ---------------------------------------
+2022-07-04 06:42:08 info: >>> Running Unit Test `ex1-johnWho` <<<
+2022-07-04 06:42:08 info: ---------------------------------------
+2022-07-04 06:42:14 error: *** Unit Test Error Report ***
+
+Command failed: npx jest ex1-johnWho.test.js --colors
+Browserslist: caniuse-lite is outdated. Please run:
+  npx browserslist@latest --update-db
+  Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
+ FAIL  3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js
+  getAnonName
+    √ should exist and be executable (4 ms)
+    √ should have all TODO comments removed (1 ms)
+    √ `getAnonName` should not contain unneeded console.log calls (2 ms)
+    √ should call `new Promise()`
+    √ should take a single argument (1 ms)
+    √ `resolve()` should be called with a one argument
+    √ `reject()` should be called with a one argument (1 ms)
+    × should resolve when called with a string argument (3 ms)
+    × should reject with an Error object when called without an argument (1 ms)
+
+  ● getAnonName › should resolve when called with a string argument
+
+    expect(received).toBeInstanceOf(expected)
+
+    Expected constructor: Promise
+
+    Received value has no prototype
+    Received value: undefined
+
+      77 |     const promise = getAnonName('John');
+      78 |     timeoutSpy.mockRestore();
+    > 79 |     expect(promise).toBeInstanceOf(Promise);
+         |                     ^
+      80 |     return expect(promise).resolves.toEqual('John Doe');
+      81 |   });
+      82 |
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:79:21)
+
+  ● getAnonName › should resolve when called with a string argument
+
+    expect.assertions(3)
+
+    Expected three assertions to be called but received two assertion calls.
+
+      70 |
+      71 |   test('should resolve when called with a string argument', async () => {
+    > 72 |     expect.assertions(3);
+         |            ^
+      73 |     expect(exported).toBeDefined();
+      74 |     const timeoutSpy = jest
+      75 |       .spyOn(global, 'setTimeout')
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:72:12)
+
+  ● getAnonName › should reject with an Error object when called without an argument
+
+    expect(received).toBeInstanceOf(expected)
+
+    Expected constructor: Promise
+
+    Received value has no prototype
+    Received value: undefined
+
+      89 |     const promise = getAnonName();
+      90 |     timeoutSpy.mockRestore();
+    > 91 |     expect(promise).toBeInstanceOf(Promise);
+         |                     ^
+      92 |     return expect(promise).rejects.toBeInstanceOf(Error);
+      93 |   });
+      94 | });
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:91:21)
+
+  ● getAnonName › should reject with an Error object when called without an argument
+
+    expect.assertions(3)
+
+    Expected three assertions to be called but received two assertion calls.
+
+      82 |
+      83 |   test('should reject with an Error object when called without an argument', async () => {
+    > 84 |     expect.assertions(3);
+         |            ^
+      85 |     expect(exported).toBeDefined();
+      86 |     const timeoutSpy = jest
+      87 |       .spyOn(global, 'setTimeout')
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:84:12)
+
+Test Suites: 1 failed, 1 total
+Tests:       2 failed, 7 passed, 9 total
+Snapshots:   0 total
+Time:        1.109 s, estimated 2 s
+Ran all test suites matching /ex1-johnWho.test.js/i.
+2022-07-04 06:42:40 info: ---------------------------------------
+2022-07-04 06:42:40 info: >>> Running Unit Test `ex1-johnWho` <<<
+2022-07-04 06:42:40 info: ---------------------------------------
+2022-07-04 06:42:46 error: *** Unit Test Error Report ***
+
+Command failed: npx jest ex1-johnWho.test.js --colors
+Browserslist: caniuse-lite is outdated. Please run:
+  npx browserslist@latest --update-db
+  Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
+ FAIL  3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js
+  getAnonName
+    √ should exist and be executable (3 ms)
+    √ should have all TODO comments removed (1 ms)
+    √ `getAnonName` should not contain unneeded console.log calls (1 ms)
+    √ should call `new Promise()`
+    √ should take a single argument
+    √ `resolve()` should be called with a one argument
+    √ `reject()` should be called with a one argument (1 ms)
+    × should resolve when called with a string argument (3 ms)
+    × should reject with an Error object when called without an argument (2 ms)
+
+  ● getAnonName › should resolve when called with a string argument
+
+    expect(received).toBeInstanceOf(expected)
+
+    Expected constructor: Promise
+
+    Received value has no prototype
+    Received value: undefined
+
+      77 |     const promise = getAnonName('John');
+      78 |     timeoutSpy.mockRestore();
+    > 79 |     expect(promise).toBeInstanceOf(Promise);
+         |                     ^
+      80 |     return expect(promise).resolves.toEqual('John Doe');
+      81 |   });
+      82 |
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:79:21)
+
+  ● getAnonName › should resolve when called with a string argument
+
+    expect.assertions(3)
+
+    Expected three assertions to be called but received two assertion calls.
+
+      70 |
+      71 |   test('should resolve when called with a string argument', async () => {
+    > 72 |     expect.assertions(3);
+         |            ^
+      73 |     expect(exported).toBeDefined();
+      74 |     const timeoutSpy = jest
+      75 |       .spyOn(global, 'setTimeout')
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:72:12)
+
+  ● getAnonName › should reject with an Error object when called without an argument
+
+    expect(received).toBeInstanceOf(expected)
+
+    Expected constructor: Promise
+
+    Received value has no prototype
+    Received value: undefined
+
+      89 |     const promise = getAnonName();
+      90 |     timeoutSpy.mockRestore();
+    > 91 |     expect(promise).toBeInstanceOf(Promise);
+         |                     ^
+      92 |     return expect(promise).rejects.toBeInstanceOf(Error);
+      93 |   });
+      94 | });
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:91:21)
+
+  ● getAnonName › should reject with an Error object when called without an argument
+
+    expect.assertions(3)
+
+    Expected three assertions to be called but received two assertion calls.
+
+      82 |
+      83 |   test('should reject with an Error object when called without an argument', async () => {
+    > 84 |     expect.assertions(3);
+         |            ^
+      85 |     expect(exported).toBeDefined();
+      86 |     const timeoutSpy = jest
+      87 |       .spyOn(global, 'setTimeout')
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:84:12)
+
+Test Suites: 1 failed, 1 total
+Tests:       2 failed, 7 passed, 9 total
+Snapshots:   0 total
+Time:        1.071 s
+Ran all test suites matching /ex1-johnWho.test.js/i.
+2022-07-04 06:48:55 info: ---------------------------------------
+2022-07-04 06:48:55 info: >>> Running Unit Test `ex1-johnWho` <<<
+2022-07-04 06:48:55 info: ---------------------------------------
+2022-07-04 06:49:02 error: *** Unit Test Error Report ***
+
+Command failed: npx jest ex1-johnWho.test.js --colors
+Browserslist: caniuse-lite is outdated. Please run:
+  npx browserslist@latest --update-db
+  Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
+ FAIL  3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js
+  getAnonName
+    × should exist and be executable (3 ms)
+    √ should have all TODO comments removed
+    √ `getAnonName` should not contain unneeded console.log calls (1 ms)
+    × should call `new Promise()` (1 ms)
+    × should take a single argument (2 ms)
+    × `resolve()` should be called with a one argument (1 ms)
+    × `reject()` should be called with a one argument
+    × should resolve when called with a string argument
+    × should reject with an Error object when called without an argument
+
+  ● getAnonName › should exist and be executable
+
+    expect(received).toBeDefined()
+
+    Received: undefined
+
+      46 |
+      47 |   test('should exist and be executable', () => {
+    > 48 |     expect(exported).toBeDefined();
+         |                      ^
+      49 |   });
+      50 |
+      51 |   testTodosRemoved(() => source);
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:48:22)
+
+  ● getAnonName › should call `new Promise()`
+
+    expect(received).toBeDefined()
+
+    Received: undefined
+
+      54 |
+      55 |   test('should call `new Promise()`', () => {
+    > 56 |     expect(state.newPromise).toBeDefined();
+         |                              ^
+      57 |   });
+      58 |
+      59 |   test('should take a single argument', () => {
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:56:30)
+
+  ● getAnonName › should take a single argument
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 0
+
+      58 |
+      59 |   test('should take a single argument', () => {
+    > 60 |     expect(state.paramCount).toBe(1);
+         |                              ^
+      61 |   });
+      62 |
+      63 |   test('`resolve()` should be called with a one argument', () => {
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:60:30)
+
+  ● getAnonName › `resolve()` should be called with a one argument
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: undefined
+
+      62 |
+      63 |   test('`resolve()` should be called with a one argument', () => {
+    > 64 |     expect(state.resolve).toBe(1);
+         |                           ^
+      65 |   });
+      66 |
+      67 |   test('`reject()` should be called with a one argument', () => {
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:64:27)
+
+  ● getAnonName › `reject()` should be called with a one argument
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: undefined
+
+      66 |
+      67 |   test('`reject()` should be called with a one argument', () => {
+    > 68 |     expect(state.reject).toBe(1);
+         |                          ^
+      69 |   });
+      70 |
+      71 |   test('should resolve when called with a string argument', async () => {
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:68:26)
+
+  ● getAnonName › should resolve when called with a string argument
+
+    expect(received).toBeDefined()
+
+    Received: undefined
+
+      71 |   test('should resolve when called with a string argument', async () => {
+      72 |     expect.assertions(3);
+    > 73 |     expect(exported).toBeDefined();
+         |                      ^
+      74 |     const timeoutSpy = jest
+      75 |       .spyOn(global, 'setTimeout')
+      76 |       .mockImplementation((cb) => cb());
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:73:22)
+
+  ● getAnonName › should resolve when called with a string argument
+
+    expect.assertions(3)
+
+    Expected three assertions to be called but received one assertion call.
+
+      70 |
+      71 |   test('should resolve when called with a string argument', async () => {
+    > 72 |     expect.assertions(3);
+         |            ^
+      73 |     expect(exported).toBeDefined();
+      74 |     const timeoutSpy = jest
+      75 |       .spyOn(global, 'setTimeout')
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:72:12)
+
+  ● getAnonName › should reject with an Error object when called without an argument
+
+    expect(received).toBeDefined()
+
+    Received: undefined
+
+      83 |   test('should reject with an Error object when called without an argument', async () => {
+      84 |     expect.assertions(3);
+    > 85 |     expect(exported).toBeDefined();
+         |                      ^
+      86 |     const timeoutSpy = jest
+      87 |       .spyOn(global, 'setTimeout')
+      88 |       .mockImplementation((cb) => cb());
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:85:22)
+
+  ● getAnonName › should reject with an Error object when called without an argument
+
+    expect.assertions(3)
+
+    Expected three assertions to be called but received one assertion call.
+
+      82 |
+      83 |   test('should reject with an Error object when called without an argument', async () => {
+    > 84 |     expect.assertions(3);
+         |            ^
+      85 |     expect(exported).toBeDefined();
+      86 |     const timeoutSpy = jest
+      87 |       .spyOn(global, 'setTimeout')
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:84:12)
+
+Test Suites: 1 failed, 1 total
+Tests:       7 failed, 2 passed, 9 total
+Snapshots:   0 total
+Time:        1.408 s
+Ran all test suites matching /ex1-johnWho.test.js/i.
+2022-07-04 06:49:05 error: *** ESLint Report ***
+
+ex1-johnWho.js
+  22:11  error  Parsing error: Identifier 'result' has already been declared
+
+✖ 1 problem (1 error, 0 warnings)
+
+
+2022-07-04 06:49:36 info: ---------------------------------------
+2022-07-04 06:49:36 info: >>> Running Unit Test `ex1-johnWho` <<<
+2022-07-04 06:49:36 info: ---------------------------------------
+2022-07-04 06:49:41 error: *** Unit Test Error Report ***
+
+Command failed: npx jest ex1-johnWho.test.js --colors
+Browserslist: caniuse-lite is outdated. Please run:
+  npx browserslist@latest --update-db
+  Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
+ FAIL  3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js
+  getAnonName
+    √ should exist and be executable (3 ms)
+    √ should have all TODO comments removed (1 ms)
+    √ `getAnonName` should not contain unneeded console.log calls (2 ms)
+    √ should call `new Promise()`
+    √ should take a single argument
+    √ `resolve()` should be called with a one argument (1 ms)
+    √ `reject()` should be called with a one argument (1 ms)
+    × should resolve when called with a string argument (5 ms)
+    × should reject with an Error object when called without an argument (1 ms)
+
+  ● getAnonName › should resolve when called with a string argument
+
+    expect(received).toBeInstanceOf(expected)
+
+    Expected constructor: Promise
+
+    Received value has no prototype
+    Received value: undefined
+
+      77 |     const promise = getAnonName('John');
+      78 |     timeoutSpy.mockRestore();
+    > 79 |     expect(promise).toBeInstanceOf(Promise);
+         |                     ^
+      80 |     return expect(promise).resolves.toEqual('John Doe');
+      81 |   });
+      82 |
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:79:21)
+
+  ● getAnonName › should resolve when called with a string argument
+
+    expect.assertions(3)
+
+    Expected three assertions to be called but received two assertion calls.
+
+      70 |
+      71 |   test('should resolve when called with a string argument', async () => {
+    > 72 |     expect.assertions(3);
+         |            ^
+      73 |     expect(exported).toBeDefined();
+      74 |     const timeoutSpy = jest
+      75 |       .spyOn(global, 'setTimeout')
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:72:12)
+
+  ● getAnonName › should reject with an Error object when called without an argument
+
+    expect(received).toBeInstanceOf(expected)
+
+    Expected constructor: Promise
+
+    Received value has no prototype
+    Received value: undefined
+
+      89 |     const promise = getAnonName();
+      90 |     timeoutSpy.mockRestore();
+    > 91 |     expect(promise).toBeInstanceOf(Promise);
+         |                     ^
+      92 |     return expect(promise).rejects.toBeInstanceOf(Error);
+      93 |   });
+      94 | });
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:91:21)
+
+  ● getAnonName › should reject with an Error object when called without an argument
+
+    expect.assertions(3)
+
+    Expected three assertions to be called but received two assertion calls.
+
+      82 |
+      83 |   test('should reject with an Error object when called without an argument', async () => {
+    > 84 |     expect.assertions(3);
+         |            ^
+      85 |     expect(exported).toBeDefined();
+      86 |     const timeoutSpy = jest
+      87 |       .spyOn(global, 'setTimeout')
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:84:12)
+
+Test Suites: 1 failed, 1 total
+Tests:       2 failed, 7 passed, 9 total
+Snapshots:   0 total
+Time:        0.969 s, estimated 2 s
+Ran all test suites matching /ex1-johnWho.test.js/i.
+2022-07-04 06:58:07 info: ---------------------------------------
+2022-07-04 06:58:07 info: >>> Running Unit Test `ex1-johnWho` <<<
+2022-07-04 06:58:07 info: ---------------------------------------
+2022-07-04 06:58:13 error: *** Unit Test Error Report ***
+
+Command failed: npx jest ex1-johnWho.test.js --colors
+Browserslist: caniuse-lite is outdated. Please run:
+  npx browserslist@latest --update-db
+  Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
+ FAIL  3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js
+  getAnonName
+    √ should exist and be executable (2 ms)
+    √ should have all TODO comments removed (1 ms)
+    √ `getAnonName` should not contain unneeded console.log calls (1 ms)
+    √ should call `new Promise()` (1 ms)
+    √ should take a single argument
+    √ `resolve()` should be called with a one argument
+    √ `reject()` should be called with a one argument (1 ms)
+    × should resolve when called with a string argument (2 ms)
+    × should reject with an Error object when called without an argument (1 ms)
+
+  ● getAnonName › should resolve when called with a string argument
+
+    expect(received).toBeInstanceOf(expected)
+
+    Expected constructor: Promise
+
+    Received value has no prototype
+    Received value: undefined
+
+      77 |     const promise = getAnonName('John');
+      78 |     timeoutSpy.mockRestore();
+    > 79 |     expect(promise).toBeInstanceOf(Promise);
+         |                     ^
+      80 |     return expect(promise).resolves.toEqual('John Doe');
+      81 |   });
+      82 |
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:79:21)
+
+  ● getAnonName › should resolve when called with a string argument
+
+    expect.assertions(3)
+
+    Expected three assertions to be called but received two assertion calls.
+
+      70 |
+      71 |   test('should resolve when called with a string argument', async () => {
+    > 72 |     expect.assertions(3);
+         |            ^
+      73 |     expect(exported).toBeDefined();
+      74 |     const timeoutSpy = jest
+      75 |       .spyOn(global, 'setTimeout')
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:72:12)
+
+  ● getAnonName › should reject with an Error object when called without an argument
+
+    expect(received).toBeInstanceOf(expected)
+
+    Expected constructor: Promise
+
+    Received value has no prototype
+    Received value: undefined
+
+      89 |     const promise = getAnonName();
+      90 |     timeoutSpy.mockRestore();
+    > 91 |     expect(promise).toBeInstanceOf(Promise);
+         |                     ^
+      92 |     return expect(promise).rejects.toBeInstanceOf(Error);
+      93 |   });
+      94 | });
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:91:21)
+
+  ● getAnonName › should reject with an Error object when called without an argument
+
+    expect.assertions(3)
+
+    Expected three assertions to be called but received two assertion calls.
+
+      82 |
+      83 |   test('should reject with an Error object when called without an argument', async () => {
+    > 84 |     expect.assertions(3);
+         |            ^
+      85 |     expect(exported).toBeDefined();
+      86 |     const timeoutSpy = jest
+      87 |       .spyOn(global, 'setTimeout')
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:84:12)
+
+Test Suites: 1 failed, 1 total
+Tests:       2 failed, 7 passed, 9 total
+Snapshots:   0 total
+Time:        1.1 s
+Ran all test suites matching /ex1-johnWho.test.js/i.
+2022-07-04 06:59:09 info: ---------------------------------------
+2022-07-04 06:59:09 info: >>> Running Unit Test `ex1-johnWho` <<<
+2022-07-04 06:59:09 info: ---------------------------------------
+2022-07-04 06:59:14 error: *** Unit Test Error Report ***
+
+Command failed: npx jest ex1-johnWho.test.js --colors
+Browserslist: caniuse-lite is outdated. Please run:
+  npx browserslist@latest --update-db
+  Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
+node:internal/process/promises:246
+          triggerUncaughtException(err, true /* fromPromise */);
+          ^
+
+[UnhandledPromiseRejection: This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). The promise rejected with the reason "You didn't pass in a first name!".] {
+  code: 'ERR_UNHANDLED_REJECTION'
+}
+2022-07-04 07:00:03 info: ---------------------------------------
+2022-07-04 07:00:03 info: >>> Running Unit Test `ex1-johnWho` <<<
+2022-07-04 07:00:03 info: ---------------------------------------
+2022-07-04 07:00:09 error: *** Unit Test Error Report ***
+
+Command failed: npx jest ex1-johnWho.test.js --colors
+Browserslist: caniuse-lite is outdated. Please run:
+  npx browserslist@latest --update-db
+  Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
+node:internal/process/promises:246
+          triggerUncaughtException(err, true /* fromPromise */);
+          ^
+
+[UnhandledPromiseRejection: This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). The promise rejected with the reason "You didn't pass in a first name!".] {
+  code: 'ERR_UNHANDLED_REJECTION'
+}
+2022-07-04 07:01:09 info: ---------------------------------------
+2022-07-04 07:01:09 info: >>> Running Unit Test `ex1-johnWho` <<<
+2022-07-04 07:01:09 info: ---------------------------------------
+2022-07-04 07:01:15 error: *** Unit Test Error Report ***
+
+Command failed: npx jest ex1-johnWho.test.js --colors
+Browserslist: caniuse-lite is outdated. Please run:
+  npx browserslist@latest --update-db
+  Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
+ FAIL  3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js
+  getAnonName
+    √ should exist and be executable (6 ms)
+    √ should have all TODO comments removed (2 ms)
+    √ `getAnonName` should not contain unneeded console.log calls (4 ms)
+    √ should call `new Promise()` (2 ms)
+    √ should take a single argument (1 ms)
+    √ `resolve()` should be called with a one argument (1 ms)
+    √ `reject()` should be called with a one argument (2 ms)
+    × should resolve when called with a string argument (9 ms)
+    × should reject with an Error object when called without an argument (2 ms)
+
+  ● getAnonName › should resolve when called with a string argument
+
+    expect(received).toBeInstanceOf(expected)
+
+    Expected constructor: Promise
+
+    Received value has no prototype
+    Received value: undefined
+
+      77 |     const promise = getAnonName('John');
+      78 |     timeoutSpy.mockRestore();
+    > 79 |     expect(promise).toBeInstanceOf(Promise);
+         |                     ^
+      80 |     return expect(promise).resolves.toEqual('John Doe');
+      81 |   });
+      82 |
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:79:21)
+
+  ● getAnonName › should resolve when called with a string argument
+
+    expect.assertions(3)
+
+    Expected three assertions to be called but received two assertion calls.
+
+      70 |
+      71 |   test('should resolve when called with a string argument', async () => {
+    > 72 |     expect.assertions(3);
+         |            ^
+      73 |     expect(exported).toBeDefined();
+      74 |     const timeoutSpy = jest
+      75 |       .spyOn(global, 'setTimeout')
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:72:12)
+
+  ● getAnonName › should reject with an Error object when called without an argument
+
+    expect(received).toBeInstanceOf(expected)
+
+    Expected constructor: Promise
+
+    Received value has no prototype
+    Received value: undefined
+
+      89 |     const promise = getAnonName();
+      90 |     timeoutSpy.mockRestore();
+    > 91 |     expect(promise).toBeInstanceOf(Promise);
+         |                     ^
+      92 |     return expect(promise).rejects.toBeInstanceOf(Error);
+      93 |   });
+      94 | });
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:91:21)
+
+  ● getAnonName › should reject with an Error object when called without an argument
+
+    expect.assertions(3)
+
+    Expected three assertions to be called but received two assertion calls.
+
+      82 |
+      83 |   test('should reject with an Error object when called without an argument', async () => {
+    > 84 |     expect.assertions(3);
+         |            ^
+      85 |     expect(exported).toBeDefined();
+      86 |     const timeoutSpy = jest
+      87 |       .spyOn(global, 'setTimeout')
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:84:12)
+
+Test Suites: 1 failed, 1 total
+Tests:       2 failed, 7 passed, 9 total
+Snapshots:   0 total
+Time:        1.198 s
+Ran all test suites matching /ex1-johnWho.test.js/i.
+2022-07-04 07:02:12 info: ---------------------------------------
+2022-07-04 07:02:12 info: >>> Running Unit Test `ex1-johnWho` <<<
+2022-07-04 07:02:12 info: ---------------------------------------
+2022-07-04 07:02:17 error: *** Unit Test Error Report ***
+
+Command failed: npx jest ex1-johnWho.test.js --colors
+Browserslist: caniuse-lite is outdated. Please run:
+  npx browserslist@latest --update-db
+  Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
+ FAIL  3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js
+  getAnonName
+    √ should exist and be executable (3 ms)
+    √ should have all TODO comments removed
+    √ `getAnonName` should not contain unneeded console.log calls (1 ms)
+    √ should call `new Promise()` (1 ms)
+    √ should take a single argument (1 ms)
+    √ `resolve()` should be called with a one argument
+    √ `reject()` should be called with a one argument
+    × should resolve when called with a string argument (3 ms)
+    × should reject with an Error object when called without an argument (1 ms)
+
+  ● getAnonName › should resolve when called with a string argument
+
+    expect(received).toBeInstanceOf(expected)
+
+    Expected constructor: Promise
+
+    Received value has no prototype
+    Received value: undefined
+
+      77 |     const promise = getAnonName('John');
+      78 |     timeoutSpy.mockRestore();
+    > 79 |     expect(promise).toBeInstanceOf(Promise);
+         |                     ^
+      80 |     return expect(promise).resolves.toEqual('John Doe');
+      81 |   });
+      82 |
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:79:21)
+
+  ● getAnonName › should resolve when called with a string argument
+
+    expect.assertions(3)
+
+    Expected three assertions to be called but received two assertion calls.
+
+      70 |
+      71 |   test('should resolve when called with a string argument', async () => {
+    > 72 |     expect.assertions(3);
+         |            ^
+      73 |     expect(exported).toBeDefined();
+      74 |     const timeoutSpy = jest
+      75 |       .spyOn(global, 'setTimeout')
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:72:12)
+
+  ● getAnonName › should reject with an Error object when called without an argument
+
+    expect(received).toBeInstanceOf(expected)
+
+    Expected constructor: Promise
+
+    Received value has no prototype
+    Received value: undefined
+
+      89 |     const promise = getAnonName();
+      90 |     timeoutSpy.mockRestore();
+    > 91 |     expect(promise).toBeInstanceOf(Promise);
+         |                     ^
+      92 |     return expect(promise).rejects.toBeInstanceOf(Error);
+      93 |   });
+      94 | });
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:91:21)
+
+  ● getAnonName › should reject with an Error object when called without an argument
+
+    expect.assertions(3)
+
+    Expected three assertions to be called but received two assertion calls.
+
+      82 |
+      83 |   test('should reject with an Error object when called without an argument', async () => {
+    > 84 |     expect.assertions(3);
+         |            ^
+      85 |     expect(exported).toBeDefined();
+      86 |     const timeoutSpy = jest
+      87 |       .spyOn(global, 'setTimeout')
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:84:12)
+
+Test Suites: 1 failed, 1 total
+Tests:       2 failed, 7 passed, 9 total
+Snapshots:   0 total
+Time:        1.03 s, estimated 2 s
+Ran all test suites matching /ex1-johnWho.test.js/i.
+2022-07-04 08:43:50 info: ---------------------------------------
+2022-07-04 08:43:50 info: >>> Running Unit Test `ex1-johnWho` <<<
+2022-07-04 08:43:50 info: ---------------------------------------
+2022-07-04 08:43:55 error: *** Unit Test Error Report ***
+
+Command failed: npx jest ex1-johnWho.test.js --colors
+Browserslist: caniuse-lite is outdated. Please run:
+  npx browserslist@latest --update-db
+  Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
+ FAIL  3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js
+  getAnonName
+    √ should exist and be executable (4 ms)
+    √ should have all TODO comments removed
+    × `getAnonName` should not contain unneeded console.log calls (4 ms)
+    √ should call `new Promise()`
+    √ should take a single argument
+    √ `resolve()` should be called with a one argument (1 ms)
+    √ `reject()` should be called with a one argument
+    × should resolve when called with a string argument (1 ms)
+    × should reject with an Error object when called without an argument (1 ms)
+
+  ● getAnonName › `getAnonName` should not contain unneeded console.log calls
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: false
+    Received: true
+
+      137 |       });
+      138 |
+    > 139 |     expect(callsConsoleLog).toBe(false);
+          |                             ^
+      140 |   });
+      141 | }
+      142 |
+
+      at Object.<anonymous> (test-runner/unit-test-helpers.js:139:29)
+
+  ● getAnonName › should resolve when called with a string argument
+
+    expect(received).toBeInstanceOf(expected)
+
+    Expected constructor: Promise
+
+    Received value has no prototype
+    Received value: undefined
+
+      77 |     const promise = getAnonName('John');
+      78 |     timeoutSpy.mockRestore();
+    > 79 |     expect(promise).toBeInstanceOf(Promise);
+         |                     ^
+      80 |     return expect(promise).resolves.toEqual('John Doe');
+      81 |   });
+      82 |
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:79:21)
+
+  ● getAnonName › should resolve when called with a string argument
+
+    expect.assertions(3)
+
+    Expected three assertions to be called but received two assertion calls.
+
+      70 |
+      71 |   test('should resolve when called with a string argument', async () => {
+    > 72 |     expect.assertions(3);
+         |            ^
+      73 |     expect(exported).toBeDefined();
+      74 |     const timeoutSpy = jest
+      75 |       .spyOn(global, 'setTimeout')
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:72:12)
+
+  ● getAnonName › should reject with an Error object when called without an argument
+
+    expect(received).toBeInstanceOf(expected)
+
+    Expected constructor: Promise
+
+    Received value has no prototype
+    Received value: undefined
+
+      89 |     const promise = getAnonName();
+      90 |     timeoutSpy.mockRestore();
+    > 91 |     expect(promise).toBeInstanceOf(Promise);
+         |                     ^
+      92 |     return expect(promise).rejects.toBeInstanceOf(Error);
+      93 |   });
+      94 | });
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:91:21)
+
+  ● getAnonName › should reject with an Error object when called without an argument
+
+    expect.assertions(3)
+
+    Expected three assertions to be called but received two assertion calls.
+
+      82 |
+      83 |   test('should reject with an Error object when called without an argument', async () => {
+    > 84 |     expect.assertions(3);
+         |            ^
+      85 |     expect(exported).toBeDefined();
+      86 |     const timeoutSpy = jest
+      87 |       .spyOn(global, 'setTimeout')
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:84:12)
+
+Test Suites: 1 failed, 1 total
+Tests:       3 failed, 6 passed, 9 total
+Snapshots:   0 total
+Time:        1.012 s
+Ran all test suites matching /ex1-johnWho.test.js/i.
+2022-07-04 08:45:16 info: ---------------------------------------
+2022-07-04 08:45:16 info: >>> Running Unit Test `ex1-johnWho` <<<
+2022-07-04 08:45:16 info: ---------------------------------------
+2022-07-04 08:45:19 error: *** Unit Test Error Report ***
+
+Command failed: npx jest ex1-johnWho.test.js --colors
+Browserslist: caniuse-lite is outdated. Please run:
+  npx browserslist@latest --update-db
+  Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
+ FAIL  3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js
+  getAnonName
+    √ should exist and be executable (1 ms)
+    √ should have all TODO comments removed
+    × `getAnonName` should not contain unneeded console.log calls (4 ms)
+    √ should call `new Promise()` (1 ms)
+    √ should take a single argument
+    √ `resolve()` should be called with a one argument (1 ms)
+    √ `reject()` should be called with a one argument
+    × should resolve when called with a string argument (2 ms)
+    × should reject with an Error object when called without an argument
+
+  ● getAnonName › `getAnonName` should not contain unneeded console.log calls
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: false
+    Received: true
+
+      137 |       });
+      138 |
+    > 139 |     expect(callsConsoleLog).toBe(false);
+          |                             ^
+      140 |   });
+      141 | }
+      142 |
+
+      at Object.<anonymous> (test-runner/unit-test-helpers.js:139:29)
+
+  ● getAnonName › should resolve when called with a string argument
+
+    expect(received).toBeInstanceOf(expected)
+
+    Expected constructor: Promise
+
+    Received value has no prototype
+    Received value: undefined
+
+      77 |     const promise = getAnonName('John');
+      78 |     timeoutSpy.mockRestore();
+    > 79 |     expect(promise).toBeInstanceOf(Promise);
+         |                     ^
+      80 |     return expect(promise).resolves.toEqual('John Doe');
+      81 |   });
+      82 |
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:79:21)
+
+  ● getAnonName › should resolve when called with a string argument
+
+    expect.assertions(3)
+
+    Expected three assertions to be called but received two assertion calls.
+
+      70 |
+      71 |   test('should resolve when called with a string argument', async () => {
+    > 72 |     expect.assertions(3);
+         |            ^
+      73 |     expect(exported).toBeDefined();
+      74 |     const timeoutSpy = jest
+      75 |       .spyOn(global, 'setTimeout')
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:72:12)
+
+  ● getAnonName › should reject with an Error object when called without an argument
+
+    expect(received).toBeInstanceOf(expected)
+
+    Expected constructor: Promise
+
+    Received value has no prototype
+    Received value: undefined
+
+      89 |     const promise = getAnonName();
+      90 |     timeoutSpy.mockRestore();
+    > 91 |     expect(promise).toBeInstanceOf(Promise);
+         |                     ^
+      92 |     return expect(promise).rejects.toBeInstanceOf(Error);
+      93 |   });
+      94 | });
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:91:21)
+
+  ● getAnonName › should reject with an Error object when called without an argument
+
+    expect.assertions(3)
+
+    Expected three assertions to be called but received two assertion calls.
+
+      82 |
+      83 |   test('should reject with an Error object when called without an argument', async () => {
+    > 84 |     expect.assertions(3);
+         |            ^
+      85 |     expect(exported).toBeDefined();
+      86 |     const timeoutSpy = jest
+      87 |       .spyOn(global, 'setTimeout')
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:84:12)
+
+Test Suites: 1 failed, 1 total
+Tests:       3 failed, 6 passed, 9 total
+Snapshots:   0 total
+Time:        0.657 s, estimated 1 s
+Ran all test suites matching /ex1-johnWho.test.js/i.
+2022-07-04 08:46:53 info: ---------------------------------------
+2022-07-04 08:46:53 info: >>> Running Unit Test `ex1-johnWho` <<<
+2022-07-04 08:46:53 info: ---------------------------------------
+2022-07-04 08:46:56 error: *** Unit Test Error Report ***
+
+Command failed: npx jest ex1-johnWho.test.js --colors
+Browserslist: caniuse-lite is outdated. Please run:
+  npx browserslist@latest --update-db
+  Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
+ FAIL  3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js
+  getAnonName
+    √ should exist and be executable (1 ms)
+    √ should have all TODO comments removed (1 ms)
+    × `getAnonName` should not contain unneeded console.log calls (3 ms)
+    √ should call `new Promise()`
+    √ should take a single argument
+    √ `resolve()` should be called with a one argument (1 ms)
+    √ `reject()` should be called with a one argument
+    × should resolve when called with a string argument (1 ms)
+    × should reject with an Error object when called without an argument
+
+  ● getAnonName › `getAnonName` should not contain unneeded console.log calls
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: false
+    Received: true
+
+      137 |       });
+      138 |
+    > 139 |     expect(callsConsoleLog).toBe(false);
+          |                             ^
+      140 |   });
+      141 | }
+      142 |
+
+      at Object.<anonymous> (test-runner/unit-test-helpers.js:139:29)
+
+  ● getAnonName › should resolve when called with a string argument
+
+    expect(received).toBeInstanceOf(expected)
+
+    Expected constructor: Promise
+
+    Received value has no prototype
+    Received value: undefined
+
+      77 |     const promise = getAnonName('John');
+      78 |     timeoutSpy.mockRestore();
+    > 79 |     expect(promise).toBeInstanceOf(Promise);
+         |                     ^
+      80 |     return expect(promise).resolves.toEqual('John Doe');
+      81 |   });
+      82 |
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:79:21)
+
+  ● getAnonName › should resolve when called with a string argument
+
+    expect.assertions(3)
+
+    Expected three assertions to be called but received two assertion calls.
+
+      70 |
+      71 |   test('should resolve when called with a string argument', async () => {
+    > 72 |     expect.assertions(3);
+         |            ^
+      73 |     expect(exported).toBeDefined();
+      74 |     const timeoutSpy = jest
+      75 |       .spyOn(global, 'setTimeout')
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:72:12)
+
+  ● getAnonName › should reject with an Error object when called without an argument
+
+    expect(received).toBeInstanceOf(expected)
+
+    Expected constructor: Promise
+
+    Received value has no prototype
+    Received value: undefined
+
+      89 |     const promise = getAnonName();
+      90 |     timeoutSpy.mockRestore();
+    > 91 |     expect(promise).toBeInstanceOf(Promise);
+         |                     ^
+      92 |     return expect(promise).rejects.toBeInstanceOf(Error);
+      93 |   });
+      94 | });
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:91:21)
+
+  ● getAnonName › should reject with an Error object when called without an argument
+
+    expect.assertions(3)
+
+    Expected three assertions to be called but received two assertion calls.
+
+      82 |
+      83 |   test('should reject with an Error object when called without an argument', async () => {
+    > 84 |     expect.assertions(3);
+         |            ^
+      85 |     expect(exported).toBeDefined();
+      86 |     const timeoutSpy = jest
+      87 |       .spyOn(global, 'setTimeout')
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:84:12)
+
+Test Suites: 1 failed, 1 total
+Tests:       3 failed, 6 passed, 9 total
+Snapshots:   0 total
+Time:        0.57 s, estimated 1 s
+Ran all test suites matching /ex1-johnWho.test.js/i.
+2022-07-04 08:48:44 info: ---------------------------------------
+2022-07-04 08:48:44 info: >>> Running Unit Test `ex1-johnWho` <<<
+2022-07-04 08:48:44 info: ---------------------------------------
+2022-07-04 08:48:47 error: *** Unit Test Error Report ***
+
+Command failed: npx jest ex1-johnWho.test.js --colors
+Browserslist: caniuse-lite is outdated. Please run:
+  npx browserslist@latest --update-db
+  Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
+ FAIL  3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js
+  getAnonName
+    √ should exist and be executable (2 ms)
+    √ should have all TODO comments removed (1 ms)
+    × `getAnonName` should not contain unneeded console.log calls (3 ms)
+    √ should call `new Promise()`
+    √ should take a single argument
+    √ `resolve()` should be called with a one argument (1 ms)
+    √ `reject()` should be called with a one argument (1 ms)
+    × should resolve when called with a string argument (2 ms)
+    × should reject with an Error object when called without an argument (1 ms)
+
+  ● getAnonName › `getAnonName` should not contain unneeded console.log calls
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: false
+    Received: true
+
+      137 |       });
+      138 |
+    > 139 |     expect(callsConsoleLog).toBe(false);
+          |                             ^
+      140 |   });
+      141 | }
+      142 |
+
+      at Object.<anonymous> (test-runner/unit-test-helpers.js:139:29)
+
+  ● getAnonName › should resolve when called with a string argument
+
+    expect(received).toBeInstanceOf(expected)
+
+    Expected constructor: Promise
+
+    Received value has no prototype
+    Received value: undefined
+
+      77 |     const promise = getAnonName('John');
+      78 |     timeoutSpy.mockRestore();
+    > 79 |     expect(promise).toBeInstanceOf(Promise);
+         |                     ^
+      80 |     return expect(promise).resolves.toEqual('John Doe');
+      81 |   });
+      82 |
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:79:21)
+
+  ● getAnonName › should resolve when called with a string argument
+
+    expect.assertions(3)
+
+    Expected three assertions to be called but received two assertion calls.
+
+      70 |
+      71 |   test('should resolve when called with a string argument', async () => {
+    > 72 |     expect.assertions(3);
+         |            ^
+      73 |     expect(exported).toBeDefined();
+      74 |     const timeoutSpy = jest
+      75 |       .spyOn(global, 'setTimeout')
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:72:12)
+
+  ● getAnonName › should reject with an Error object when called without an argument
+
+    expect(received).toBeInstanceOf(expected)
+
+    Expected constructor: Promise
+
+    Received value has no prototype
+    Received value: undefined
+
+      89 |     const promise = getAnonName();
+      90 |     timeoutSpy.mockRestore();
+    > 91 |     expect(promise).toBeInstanceOf(Promise);
+         |                     ^
+      92 |     return expect(promise).rejects.toBeInstanceOf(Error);
+      93 |   });
+      94 | });
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:91:21)
+
+  ● getAnonName › should reject with an Error object when called without an argument
+
+    expect.assertions(3)
+
+    Expected three assertions to be called but received two assertion calls.
+
+      82 |
+      83 |   test('should reject with an Error object when called without an argument', async () => {
+    > 84 |     expect.assertions(3);
+         |            ^
+      85 |     expect(exported).toBeDefined();
+      86 |     const timeoutSpy = jest
+      87 |       .spyOn(global, 'setTimeout')
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:84:12)
+
+Test Suites: 1 failed, 1 total
+Tests:       3 failed, 6 passed, 9 total
+Snapshots:   0 total
+Time:        0.683 s, estimated 1 s
+Ran all test suites matching /ex1-johnWho.test.js/i.
+2022-07-04 08:50:43 info: ---------------------------------------
+2022-07-04 08:50:43 info: >>> Running Unit Test `ex1-johnWho` <<<
+2022-07-04 08:50:43 info: ---------------------------------------
+2022-07-04 08:50:46 error: *** Unit Test Error Report ***
+
+Command failed: npx jest ex1-johnWho.test.js --colors
+Browserslist: caniuse-lite is outdated. Please run:
+  npx browserslist@latest --update-db
+  Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
+ FAIL  3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js
+  getAnonName
+    √ should exist and be executable (2 ms)
+    √ should have all TODO comments removed
+    × `getAnonName` should not contain unneeded console.log calls (5 ms)
+    √ should call `new Promise()` (1 ms)
+    √ should take a single argument
+    √ `resolve()` should be called with a one argument (1 ms)
+    √ `reject()` should be called with a one argument
+    × should resolve when called with a string argument (2 ms)
+    × should reject with an Error object when called without an argument
+
+  ● getAnonName › `getAnonName` should not contain unneeded console.log calls
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: false
+    Received: true
+
+      137 |       });
+      138 |
+    > 139 |     expect(callsConsoleLog).toBe(false);
+          |                             ^
+      140 |   });
+      141 | }
+      142 |
+
+      at Object.<anonymous> (test-runner/unit-test-helpers.js:139:29)
+
+  ● getAnonName › should resolve when called with a string argument
+
+    expect(received).toBeInstanceOf(expected)
+
+    Expected constructor: Promise
+
+    Received value has no prototype
+    Received value: undefined
+
+      77 |     const promise = getAnonName('John');
+      78 |     timeoutSpy.mockRestore();
+    > 79 |     expect(promise).toBeInstanceOf(Promise);
+         |                     ^
+      80 |     return expect(promise).resolves.toEqual('John Doe');
+      81 |   });
+      82 |
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:79:21)
+
+  ● getAnonName › should resolve when called with a string argument
+
+    expect.assertions(3)
+
+    Expected three assertions to be called but received two assertion calls.
+
+      70 |
+      71 |   test('should resolve when called with a string argument', async () => {
+    > 72 |     expect.assertions(3);
+         |            ^
+      73 |     expect(exported).toBeDefined();
+      74 |     const timeoutSpy = jest
+      75 |       .spyOn(global, 'setTimeout')
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:72:12)
+
+  ● getAnonName › should reject with an Error object when called without an argument
+
+    expect(received).toBeInstanceOf(expected)
+
+    Expected constructor: Promise
+
+    Received value has no prototype
+    Received value: undefined
+
+      89 |     const promise = getAnonName();
+      90 |     timeoutSpy.mockRestore();
+    > 91 |     expect(promise).toBeInstanceOf(Promise);
+         |                     ^
+      92 |     return expect(promise).rejects.toBeInstanceOf(Error);
+      93 |   });
+      94 | });
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:91:21)
+
+  ● getAnonName › should reject with an Error object when called without an argument
+
+    expect.assertions(3)
+
+    Expected three assertions to be called but received two assertion calls.
+
+      82 |
+      83 |   test('should reject with an Error object when called without an argument', async () => {
+    > 84 |     expect.assertions(3);
+         |            ^
+      85 |     expect(exported).toBeDefined();
+      86 |     const timeoutSpy = jest
+      87 |       .spyOn(global, 'setTimeout')
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:84:12)
+
+Test Suites: 1 failed, 1 total
+Tests:       3 failed, 6 passed, 9 total
+Snapshots:   0 total
+Time:        0.777 s, estimated 1 s
+Ran all test suites matching /ex1-johnWho.test.js/i.
+2022-07-04 08:54:56 info: ---------------------------------------
+2022-07-04 08:54:56 info: >>> Running Unit Test `ex1-johnWho` <<<
+2022-07-04 08:54:56 info: ---------------------------------------
+2022-07-04 08:54:59 error: *** Unit Test Error Report ***
+
+Command failed: npx jest ex1-johnWho.test.js --colors
+Browserslist: caniuse-lite is outdated. Please run:
+  npx browserslist@latest --update-db
+  Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
+ FAIL  3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js
+  getAnonName
+    √ should exist and be executable (2 ms)
+    √ should have all TODO comments removed
+    × `getAnonName` should not contain unneeded console.log calls (3 ms)
+    √ should call `new Promise()`
+    √ should take a single argument
+    √ `resolve()` should be called with a one argument
+    √ `reject()` should be called with a one argument
+    √ should resolve when called with a string argument (2 ms)
+    × should reject with an Error object when called without an argument (1 ms)
+
+  ● getAnonName › `getAnonName` should not contain unneeded console.log calls
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: false
+    Received: true
+
+      137 |       });
+      138 |
+    > 139 |     expect(callsConsoleLog).toBe(false);
+          |                             ^
+      140 |   });
+      141 | }
+      142 |
+
+      at Object.<anonymous> (test-runner/unit-test-helpers.js:139:29)
+
+  ● getAnonName › should reject with an Error object when called without an argument
+
+    expect(received).rejects.toBeInstanceOf(expected)
+
+    Expected constructor: Error
+
+    Received value has no prototype
+    Received value: "You didn't pass in a first name!"
+
+      90 |     timeoutSpy.mockRestore();
+      91 |     expect(promise).toBeInstanceOf(Promise);
+    > 92 |     return expect(promise).rejects.toBeInstanceOf(Error);
+         |                                    ^
+      93 |   });
+      94 | });
+      95 |
+
+      at Object.toBeInstanceOf (node_modules/expect/build/index.js:285:22)
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:92:36)
+
+Test Suites: 1 failed, 1 total
+Tests:       2 failed, 7 passed, 9 total
+Snapshots:   0 total
+Time:        0.684 s, estimated 1 s
+Ran all test suites matching /ex1-johnWho.test.js/i.
+2022-07-04 08:55:29 info: ---------------------------------------
+2022-07-04 08:55:29 info: >>> Running Unit Test `ex1-johnWho` <<<
+2022-07-04 08:55:29 info: ---------------------------------------
+2022-07-04 08:55:32 error: *** Unit Test Error Report ***
+
+Command failed: npx jest ex1-johnWho.test.js --colors
+Browserslist: caniuse-lite is outdated. Please run:
+  npx browserslist@latest --update-db
+  Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
+ FAIL  3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js
+  getAnonName
+    √ should exist and be executable (2 ms)
+    √ should have all TODO comments removed
+    √ `getAnonName` should not contain unneeded console.log calls (1 ms)
+    √ should call `new Promise()` (1 ms)
+    √ should take a single argument
+    √ `resolve()` should be called with a one argument
+    √ `reject()` should be called with a one argument
+    √ should resolve when called with a string argument (2 ms)
+    × should reject with an Error object when called without an argument (2 ms)
+
+  ● getAnonName › should reject with an Error object when called without an argument
+
+    expect(received).rejects.toBeInstanceOf(expected)
+
+    Expected constructor: Error
+
+    Received value has no prototype
+    Received value: "You didn't pass in a first name!"
+
+      90 |     timeoutSpy.mockRestore();
+      91 |     expect(promise).toBeInstanceOf(Promise);
+    > 92 |     return expect(promise).rejects.toBeInstanceOf(Error);
+         |                                    ^
+      93 |   });
+      94 | });
+      95 |
+
+      at Object.toBeInstanceOf (node_modules/expect/build/index.js:285:22)
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:92:36)
+
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 8 passed, 9 total
+Snapshots:   0 total
+Time:        0.688 s, estimated 1 s
+Ran all test suites matching /ex1-johnWho.test.js/i.
+2022-07-04 08:58:14 info: ---------------------------------------
+2022-07-04 08:58:14 info: >>> Running Unit Test `ex1-johnWho` <<<
+2022-07-04 08:58:14 info: ---------------------------------------
+2022-07-04 08:58:17 info: All unit tests passed.
+2022-07-04 08:58:21 info: All steps were completed successfully
