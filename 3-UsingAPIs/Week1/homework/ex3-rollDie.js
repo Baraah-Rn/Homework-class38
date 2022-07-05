@@ -27,7 +27,7 @@ function rollDie() {
 
     // Use callback to communicate the final die value once finished rolling
     if (roll === randomRollsToDo) {
-      resolve(null,value);
+      resolve(value);
     }
 
     // Schedule the next roll todo until no more rolls to do
