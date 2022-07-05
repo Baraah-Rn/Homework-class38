@@ -55,3 +55,14 @@ if (process.env.NODE_ENV !== 'test') {
   main();
 }
 module.exports = rollDie;
+
+
+
+
+//The problem described above doesn't occur because we change the calls from `callback()` to calls to promise, and 
+// the promise settled with `reject()`
+
+// A key difference between the two is when using the callback approach, 
+// we’d normally just pass a callback into a function that would then get called upon completion in order to get the result of something.
+//  In promises, however, you attach callbacks on the returned promise object.
+
