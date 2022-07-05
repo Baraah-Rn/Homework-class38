@@ -26,13 +26,13 @@ exercise file.
 // Do not change or remove it.
 const rollDie = require('../../helpers/pokerDiceRoller');
 
-function rollDice() {
-  // TODO Refactor this function
+ function rollDice() {
   const dice = [1, 2, 3, 4, 5];
-  return rollDie(1);
+   return Promise.all(dice.map(rollDie))
 }
 
 function main() {
+
   rollDice()
     .then((results) => console.log('Resolved!', results))
     .catch((error) => console.log('Rejected!', error.message));
@@ -43,3 +43,12 @@ if (process.env.NODE_ENV !== 'test') {
   main();
 }
 module.exports = rollDice;
+
+
+
+
+// In the case of a rejected promise, dice that have not yet finished their roll continue to do so
+// because of the  pending stage  before settled (When you start the request the promise is in it's pending state.
+//  When the resource has returned successfully the promise changes to the fulfilled state, 
+// When it fails, for example when the server cannot be reached, the state becomes rejected.)
+//,it allows every die to finish it's role 
