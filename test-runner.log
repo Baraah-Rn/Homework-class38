@@ -8,3 +8,13 @@
 2022-07-11 09:47:59 info: ------------------------------------------
 2022-07-11 09:48:09 info: All unit tests passed.
 2022-07-11 09:48:18 info: All steps were completed successfully
+2022-07-11 09:51:25 info: ----------------------------------------
+2022-07-11 09:51:25 info: >>> Running Unit Test `ex5-vscDebug` <<<
+2022-07-11 09:51:25 info: ----------------------------------------
+2022-07-11 09:51:25 warn: A unit test file was not provided.
+2022-07-11 09:51:33 info: All steps were completed successfully
+2022-07-11 10:18:35 info: ----------------------------------------
+2022-07-11 10:18:35 info: >>> Running Unit Test `ex5-vscDebug` <<<
+2022-07-11 10:18:35 info: ----------------------------------------
+2022-07-11 10:18:35 warn: A unit test file was not provided.
+2022-07-11 10:18:43 info: All steps were completed successfully
