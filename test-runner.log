@@ -18,3 +18,8 @@
 2022-07-11 10:18:35 info: ----------------------------------------
 2022-07-11 10:18:35 warn: A unit test file was not provided.
 2022-07-11 10:18:43 info: All steps were completed successfully
+2022-07-11 10:54:18 info: -----------------------------------------
+2022-07-11 10:54:18 info: >>> Running Unit Test `ex3-rollAnAce` <<<
+2022-07-11 10:54:18 info: -----------------------------------------
+2022-07-11 10:54:22 info: All unit tests passed.
+2022-07-11 10:54:27 info: All steps were completed successfully
