@@ -10,27 +10,25 @@ Rewrite this function, but replace the callback syntax with the Promise syntax:
 ------------------------------------------------------------------------------*/
 
 const getAnonName = (firstName) => {
-  return new Promise((resolve, reject)=>{
-  setTimeout(() => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
       if (!firstName) {
-        reject( Error("You didn't pass in a first name!"));
-      }else{
+        reject(Error("You didn't pass in a first name!"))
+        return;
+      } else {
         const fullName = `${firstName} Doe`;
-        resolve (fullName)
+        resolve(fullName)
       }
-  })
-.then(result=>{
-   return result
-  })
-  .catch(err =>{
-   return err
-  })}, 1000)
-}
 
+    }, 1000)
+  });
+
+};
 
 
 function main() {
   getAnonName('John', console.log);
+
 }
 
 // ! Do not change or remove the code below
