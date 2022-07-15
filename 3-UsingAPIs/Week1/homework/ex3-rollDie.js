@@ -10,45 +10,47 @@ Full description at: https://github.com/HackYourFuture/Homework/tree/main/3-Usin
   explanation? Add your answer as a comment to be bottom of the file.
 ------------------------------------------------------------------------------*/
 function rollDie() {
-  return new Promise((resolve, reject)=>{
-  // Compute a random number of rolls (3-10) that the die MUST complete
-  const randomRollsToDo = Math.floor(Math.random() * 8) + 3;
-  console.log(`Die scheduled for ${randomRollsToDo} rolls...`);
+  return new Promise((resolve, reject) => {
+    // Compute a random number of rolls (3-10) that the die MUST complete
+    const randomRollsToDo = Math.floor(Math.random() * 8) + 3;
+    console.log(`Die scheduled for ${randomRollsToDo} rolls...`);
 
-  const rollOnce = (roll) => {
-    // Compute a random die value for the current roll
-    const value = Math.floor(Math.random() * 6) + 1;
-    console.log(`Die value is now: ${value}`);
+    const rollOnce = (roll) => {
+      // Compute a random die value for the current roll
+      const value = Math.floor(Math.random() * 6) + 1;
+      console.log(`Die value is now: ${value}`);
 
-    // Use callback to notify that the die rolled off the table after 6 rolls
-    if (roll > 6) {
-      reject(new Error('Oops... Die rolled off the table.'));
-    }
+      // Use callback to notify that the die rolled off the table after 6 rolls
+      if (roll > 6) {
+        reject(new Error('Oops... Die rolled off the table.'));
+        return;
+      }
 
-    // Use callback to communicate the final die value once finished rolling
-    if (roll === randomRollsToDo) {
-      resolve(value);
-    }
+      // Use callback to communicate the final die value once finished rolling
+      if (roll === randomRollsToDo) {
+        resolve(value);
+      }
 
-    // Schedule the next roll todo until no more rolls to do
-    if (roll < randomRollsToDo) {
-      setTimeout(() => rollOnce(roll + 1), 500);
-    }
-  };
+      // Schedule the next roll todo until no more rolls to do
+      if (roll < randomRollsToDo) {
+        setTimeout(() => rollOnce(roll + 1), 500);
+      }
+    };
 
-  // Start the initial roll
-  rollOnce(1);
-})}
+    // Start the initial roll
+    rollOnce(1);
+  })
+}
 
 
- function main() {
-      rollDie()
-      .then(value =>{console.log(`Success! Die settled on ${value}.`)})
-      .catch(error =>{console.log(error.message)})
- }
-  
- 
- 
+function main() {
+  rollDie()
+    .then(value => { console.log(`Success! Die settled on ${value}.`) })
+    .catch(error => { console.log(error.message) })
+}
+
+
+
 
 // ! Do not change or remove the code below
 if (process.env.NODE_ENV !== 'test') {
@@ -59,10 +61,10 @@ module.exports = rollDie;
 
 
 
-//The problem described above doesn't occur because we change the calls from `callback()` to calls to promise, and 
+//The problem described above doesn't occur because we change the calls from `callback()` to calls to promise, and
 // the promise settled with `reject()`
 
-// A key difference between the two is when using the callback approach, 
+// A key difference between the two is when using the callback approach,
 // we’d normally just pass a callback into a function that would then get called upon completion in order to get the result of something.
 //  In promises, however, you attach callbacks on the returned promise object.
 

@@ -4784,3 +4784,13 @@ Ran all test suites matching /ex1-johnWho.test.js/i.
 2022-07-15 04:53:25 info: ---------------------------------------
 2022-07-15 04:53:33 info: All unit tests passed.
 2022-07-15 04:53:43 info: All steps were completed successfully
+2022-07-15 05:09:39 info: ---------------------------------------
+2022-07-15 05:09:39 info: >>> Running Unit Test `ex3-rollDie` <<<
+2022-07-15 05:09:39 info: ---------------------------------------
+2022-07-15 05:09:47 info: All unit tests passed.
+2022-07-15 05:09:56 info: All steps were completed successfully
+2022-07-15 05:15:12 info: ---------------------------------------
+2022-07-15 05:15:12 info: >>> Running Unit Test `ex3-rollDie` <<<
+2022-07-15 05:15:12 info: ---------------------------------------
+2022-07-15 05:15:18 info: All unit tests passed.
+2022-07-15 05:15:26 info: All steps were completed successfully
