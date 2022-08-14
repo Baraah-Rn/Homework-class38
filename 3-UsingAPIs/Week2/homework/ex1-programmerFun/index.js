@@ -17,20 +17,15 @@ Full description at: https://github.com/HackYourFuture/Homework/blob/main/3-Usin
    url with `.shx`. There is no server at the modified url, therefore this 
    should result in a network (DNS) error.
 ------------------------------------------------------------------------------*/
-function requestData(url) {
-  return new Promise((resolve,reject)=>{
-  fetch(url)
-  .then((response)=> {
-  if (response.ok){
-    return response.json()
-  }else{
-    throw new Error(`Some thing went wrong : ${response.status}`)
+
+async function requestData(url) {
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error('Something went wrong ,please try again.');
   }
-  })
-  .then((data)=>resolve(data))
-  .catch((error) => reject(error.message))
-});
+  return response.json();
 }
+
 
 function renderImage(data) {
  const addPic = document.createElement('img');
