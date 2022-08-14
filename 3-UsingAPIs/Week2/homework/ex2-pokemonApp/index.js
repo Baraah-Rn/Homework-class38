@@ -69,12 +69,11 @@ async function fetchImage(value) {
   if (removeImage) {
     removeImage.remove();
   }
-try{
   const data = `https://pokeapi.co/api/v2/pokemon/${value.currentTarget.value}`;
-
-  const getData = await fetchData(data);
-    const select = document.querySelector('select');
+  const select = document.querySelector('select');
+  try{
     if (select) {
+      const getData = await fetchData(data);
       const image = document.createElement('img');
       image.alt = 'Selected Pokemon Image';
       image.src = getData.sprites.other.home.front_default;
